@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,13 +18,10 @@ public class Student {
     @Column(nullable = false)
     private int age;
 
-    public String getStatus() {
-        return active ? "Active" : "Inactive";
-    }
 
 
 //    @JsonProperty("status")
-    private boolean active = true;
+    private Boolean active = true;
 
     public Student(Long id, String name, int age, Boolean active) {
         this.id = id;

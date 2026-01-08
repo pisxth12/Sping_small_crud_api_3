@@ -21,7 +21,9 @@ public class StudentController {
 
     @PostMapping
     public ApiResponse<Student> create(@RequestBody Student s){
-
+        if(s.getActive() == null){
+            s.setActive(true);
+        }
         Student saved = studentRepository.save(s);
 
         return new ApiResponse<>(true, "Student Create success", saved);
