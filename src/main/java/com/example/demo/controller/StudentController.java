@@ -64,7 +64,7 @@ public class StudentController {
 
         Student updated = studentRepository.save(s);
         String status = updated.getActive() ? "Active" : "Inactive";
-        return new ApiResponse<>(true, "Student status changed to " + status, updated);
+        return new ApiResponse<>(true, "Student status changed to "+status ,  updated);
     }
 
 

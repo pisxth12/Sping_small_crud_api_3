@@ -18,6 +18,10 @@ public class Student {
     @Column(nullable = false)
     private int age;
 
+    public String getStatus() {
+        return active ? "Active" : "Inactive";
+    }
+
 
 //    @JsonProperty("status")
     private boolean active = true;
@@ -28,6 +32,7 @@ public class Student {
         this.age = age;
         this.active = active;
     }
+
     public Student(){}
 
     public Long getId() {
